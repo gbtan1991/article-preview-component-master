@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import avatar from "../assets/images/avatar-michelle.jpg";
 import shareBlk from "../assets/images/share-solid.svg";
+import Share from './Share'
 
 const Card = () => {
+    const [ showShare, setShowShare ] =  useState(false)
+
+    const toggleShare = () => {
+        setShowShare(!showShare)
+    }
+
   return (
-    <section className="grid place-content-center h-screen">
+    <section className="grid place-content-center h-screen shadow-lg">
       <div className="flex flex-col w-[330px] sm:flex-row sm:w-[730px] sm:h-[280px]">
         <div className="h-[220px] w-full bg-header-drawer bg-cover bg-top rounded-tr-xl rounded-tl-xl rounded-bt sm:h-full sm:w-full sm:bg-left-top sm:rounded-tr-none sm:rounded-bl-xl"></div>
 
@@ -35,7 +42,7 @@ const Card = () => {
                   </p>
                 </div>
               </div>
-              <button className="bg-lightGrayishBlue w-8 h-8 rounded-full flex items-center justify-center">
+              <button className="bg-lightGrayishBlue w-8 h-8 rounded-full flex items-center justify-center" onClick={toggleShare}>
                 <img
                   src={shareBlk}
                   alt="Share icon"
@@ -43,10 +50,15 @@ const Card = () => {
                 />
               </button>
             </div>
+
+            {showShare && <Share toggleShare={toggleShare} />}
+            
           </div>
         </div>
       </div>
+      
     </section>
+    
   );
 };
 
