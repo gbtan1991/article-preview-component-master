@@ -1,21 +1,42 @@
-import React from 'react'
-import { FaFacebook, FaFacebookF, FaFacebookSquare, FaPinterest, FaShare, FaTwitter } from "react-icons/fa";
+import React from "react";
+import {
+  FaFacebook,
+  FaFacebookF,
+  FaFacebookSquare,
+  FaPinterest,
+  FaShare,
+  FaTwitter,
+} from "react-icons/fa";
 
+const Share = ({ toggleShare, showShare }) => {
+  const clipPathStyle = {
+    clipPath: "polygon(50% 100%, 0 0, 100% 0)",
+  };
 
-const Share = ({toggleShare}) => {
   return (
-    <div className=' px-8 bg-veryDarkGrayisBlue flex items-center justify-around  rounded-br-xl rounded-bl-xl w-full h-[65px]'>
-        <div className='flex flex-row gap-5 items-center'>
-        <p className='text-lightGrayishBlue font-extralight font-Manrope text-sm '>S H A R E</p> 
-        <FaFacebookSquare color='#fff' size={23}/>
-        <FaTwitter color='#fff' size={23}/>        
-        <FaPinterest color='#fff' size={23}/>
+    
+    <div className="absolute right-0 sm:-right-28 top-0 sm:-top-20 h-[60px] w-full  sm:h-[50px] sm:w-[280px]">
+      <div className=" px-8 bg-veryDarkGrayisBlue flex items-center justify-between rounded-br-xl rounded-bl-xl sm:rounded-tr-xl sm:rounded-tl-xl w-full h-full sm:absolute sm:w-full">
+        
+        <div className="flex flex-row gap-5 items-center">
+          <p className="text-lightGrayishBlue font-extralight font-Manrope text-sm ">
+            S H A R E
+          </p>
+          <FaFacebookSquare color="#fff" size={20} className="cursor-pointer" />
+          <FaTwitter color="#fff" size={20} className="cursor-pointer" />
+          <FaPinterest color="#fff" size={20} className="cursor-pointer" />
         </div>
-        <button className="bg-desaturatedDarkBlue w-8 h-8 rounded-full flex items-center justify-center" onClick={toggleShare}>
-        <FaShare  color='#fff'/>
-              </button>
-    </div>
-  )
-}
+        <button
+          className='bg-desaturatedDarkBlue w-8 h-8 rounded-full flex items-center justify-center'
+          onClick={toggleShare}
+        >
+          <FaShare color="#fff" />
+        </button>
+      </div>
+      </div>
 
-export default Share
+    
+  );
+};
+
+export default Share;
