@@ -6,7 +6,7 @@ import { FaShare } from "react-icons/fa";
 
 const Card = () => {
   const [showShare, setShowShare] = useState(false);
-  // const [windowSize, setWindowSize] = useState(window.innerWidth);
+
 
   const toggleShare = () => {
     setShowShare(!showShare);
@@ -47,8 +47,8 @@ const Card = () => {
                 </div>
               </div>
               <button
-                className={`bg-lightGrayishBlue w-8 h-8 rounded-full flex items-center justify-center sm:visible max-sm:z-10 max-sm:absolute top-[13px] right-5
-                ${showShare && "md:bg-veryDarkGrayisBlue md:text-white"}`}
+                className={`bg-lightGrayishBlue text-desaturatedDarkBlue z-50  w-8 h-8 rounded-full flex items-center justify-center max-sm:z-20 max-sm:absolute top-[13px] right-5
+                ${showShare && "bg-grayishBlue text-white sm:bg-lightGrayishBlue sm:text-desaturatedDarkBlue"}`}
                 onClick={toggleShare}
               >
                 <FaShare color="" />
