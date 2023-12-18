@@ -48,7 +48,7 @@ const Card = () => {
               </div>
               <button
                 className={`bg-lightGrayishBlue text-desaturatedDarkBlue z-50  w-8 h-8 rounded-full flex items-center justify-center max-sm:z-20 max-sm:absolute top-[13px] right-5
-                ${showShare && "bg-grayishBlue text-white sm:bg-lightGrayishBlue sm:text-desaturatedDarkBlue"}`}
+                ${showShare && "bg-desaturatedDarkBlue text-white sm:bg-desaturatedDarkBlue sm:text-white"}`}
                 onClick={toggleShare}
               >
                 <FaShare color="" />
